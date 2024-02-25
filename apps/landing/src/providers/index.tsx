@@ -7,7 +7,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material'
 import { healthTheme } from 'ui'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 
-export function Providers({ children }: PropsWithChildren) {
+export function Providers({ children }: Readonly<PropsWithChildren>) {
   const [queryClient] = useState(() => new QueryClient())
 
   return (
