@@ -140,6 +140,9 @@ importers:
       '@mui/material':
         specifier: ^5.15.7
         version: 5.15.10(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      design-tokens:
+        specifier: workspace:*
+        version: link:../design-tokens
       react:
         specifier: ^18.2.0
         version: 18.2.0

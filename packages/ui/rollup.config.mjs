@@ -19,6 +19,7 @@ export default defineConfig([{
     "@emotion/styled",
     "@mui/icons-material",
     "@mui/material",
+    "design-tokens"
   ],
   preserveModules: true,
   input:['./src/index.ts'],
