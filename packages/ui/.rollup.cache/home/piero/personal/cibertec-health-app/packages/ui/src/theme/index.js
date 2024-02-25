@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material";
 import * as dt from 'design-tokens';
 const gradientBackground = `linear-gradient(97.65deg, ${dt.ColorPrimaryMain} 0.33%, ${dt.ColorPrimary50} 93.35%)`;
-const textGradient = gradientBackground.replace('93', '50');
+const textGradient = gradientBackground.replace('93', '60');
 export const healthTheme = createTheme({
     typography: {
         body1: {
@@ -64,6 +64,13 @@ export const healthTheme = createTheme({
                     }
                 }
             ]
+        },
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    borderRadius: '2rem'
+                }
+            }
         }
     }
 });
