@@ -1,0 +1,42 @@
+{
+  "name": "ui",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.umd.js",
+  "types": "dist/types/src/index.d.ts",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "test": "vitest",
+    "build": "rollup --config rollup.config.mjs",
+    "dev": "rollup --config rollup.config.mjs --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/react": "^18.2.43",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "@vitest/coverage-v8": "^1.1.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "jsdom": "^23.0.1",
+    "postcss": "^8.4.32",
+    "rollup": "^4.9.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-sass": "^1.12.21",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.7",
+    "@mui/material": "^5.15.7",
+    "react": "^18.2.0",
+    "react-dom": ">=18.0"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "include": [
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "@types/node",
+    "stories"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "types",
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES6",
+  }
+}
