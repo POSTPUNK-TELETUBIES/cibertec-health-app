@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material";
 import * as dt from 'design-tokens'
+import { text } from "stream/consumers";
 
 const gradientBackground = `linear-gradient(97.65deg, ${dt.ColorPrimaryMain} 0.33%, ${dt.ColorPrimary50} 93.35%)`
 
@@ -27,7 +28,9 @@ export const healthTheme = createTheme({
             color: 'sheldon'
           },
           style:{
-            background: gradientBackground
+            background: gradientBackground,
+            '-webkit-background-clip': 'text',
+            '-webkit-text-fill-color': 'transparent',
           }
         }
       ]
