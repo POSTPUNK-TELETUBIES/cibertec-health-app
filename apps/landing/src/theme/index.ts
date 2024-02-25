@@ -13,7 +13,7 @@ export const healthTheme = createTheme({
             variant: 'contained'
           },
           style:{
-            '&.MuiToggleButton-primary':{
+            '&.MuiButton-colorPrimary':{
               background: gradientBackground,
               boxShadow: `box-shadow: 0px 10px 15px 0px ${dt.ColorPrimary200}`
             }
