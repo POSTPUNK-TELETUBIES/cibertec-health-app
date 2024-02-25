@@ -13,7 +13,7 @@ export = {
       disabledText: {value: '#DADADA'}
     },
     grey: {
-      50: { value: '#F3F5FB'},
+      50: { value: '#C4C4C4'},
       500: { value: '#444444'}
     }
   }

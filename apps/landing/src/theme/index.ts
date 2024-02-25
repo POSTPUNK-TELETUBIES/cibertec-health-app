@@ -6,11 +6,38 @@ const gradientBackground = `linear-gradient(97.65deg, ${dt.ColorPrimaryMain} 0.3
 const textGradient = gradientBackground.replace('93', '50')
 
 export const healthTheme = createTheme({
+  typography:{
+    body1:{
+      color: dt.ColorGrey50,
+      fontWeight: 600
+    },
+    body2:{
+      color: '#172048'
+    },
+    h1:{
+      color: '#172048',
+      fontSize: '4rem',
+      fontWeight: 900
+    },
+    h2:{
+      fontSize: '3rem',
+      fontWeight: 900,
+      color: '#172048'
+    },
+    h4:{
+      color: '#172048',
+      fontWeight: 900
+    }
+  },
   components:{
     MuiButton:{
       styleOverrides:{
         root: {
-          textTransform: 'none'
+          textTransform: 'none',
+          borderRadius: '2rem',
+          paddingInline: '2.5rem',
+          paddingBlock: '1rem',
+          fontWeight: 700
         }
       },
       variants:[
