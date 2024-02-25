@@ -1,21 +1,27 @@
 import { createTheme } from "@mui/material";
 import * as dt from 'design-tokens'
-import { text } from "stream/consumers";
+
 
 const gradientBackground = `linear-gradient(97.65deg, ${dt.ColorPrimaryMain} 0.33%, ${dt.ColorPrimary50} 93.35%)`
+const textGradient = gradientBackground.replace('93', '50')
 
 export const healthTheme = createTheme({
   components:{
     MuiButton:{
+      styleOverrides:{
+        root: {
+          textTransform: 'none'
+        }
+      },
       variants:[
         {
           props: {
             variant: 'contained'
           },
           style:{
-            '&.MuiButton-colorPrimary':{
+            '&.MuiButton-containedPrimary':{
               background: gradientBackground,
-              boxShadow: `box-shadow: 0px 10px 15px 0px ${dt.ColorPrimary200}`
+              boxShadow: `0px 10px 15px 0px ${dt.ColorPrimary200}`
             }
           }
         }
@@ -28,7 +34,7 @@ export const healthTheme = createTheme({
             color: 'sheldon'
           },
           style:{
-            background: gradientBackground,
+            background: textGradient,
             '-webkit-background-clip': 'text',
             '-webkit-text-fill-color': 'transparent',
           }
