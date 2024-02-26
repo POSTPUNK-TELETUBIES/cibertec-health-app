@@ -106,7 +106,7 @@ const InicioSesion = () => {
               </Link>
             </Typography>
 
-            <Typography variant='body2' textAlign={'center'} mt={4} fontSize={'16px'}>
+            <Typography variant='body2' textAlign={'center'} mt={2} fontSize={'16px'}>
               ¿No tienes una cuenta?{' '}
               <Link to='/registrate' style={{ textDecoration: 'none' }} color='red'>
                 <Typography color={'secondary'} fontWeight={'bold'} display={'inline-block'}>
@@ -118,7 +118,6 @@ const InicioSesion = () => {
         </Grid>
         <Grid item xs={6.5} display={'flex'} justifyContent={'center'} alignItems={'center'}>
           <Box
-            // sx={{ border: '1px dashed red' }}
             width={'100%'}
             height={'100%'}
             position={'relative'}

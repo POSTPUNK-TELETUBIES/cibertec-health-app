@@ -69,7 +69,6 @@ const Registro = () => {
         flexDirection={'column'}
         justifyContent={'center'}
         alignItems={'center'}
-        // sx={{ backgroundColor: 'pink' }}
         width={'100%'}
         maxWidth={600}
         zIndex={1}
@@ -88,7 +87,6 @@ const Registro = () => {
           <TextField
             id='nombres'
             variant='outlined'
-            size='small'
             name='nombres'
             value={formik.values.nombres}
             onChange={formik.handleChange}
@@ -100,7 +98,6 @@ const Registro = () => {
           <TextField
             id='apellidos'
             variant='outlined'
-            size='small'
             name='apellidos'
             value={formik.values.apellidos}
             onChange={formik.handleChange}
@@ -113,7 +110,6 @@ const Registro = () => {
           <TextField
             id='dni'
             variant='outlined'
-            size='small'
             name='dni'
             value={formik.values.dni}
             onChange={formik.handleChange}
@@ -127,7 +123,6 @@ const Registro = () => {
           <Select
             labelId='sexo'
             id='demo-select-small'
-            size='small'
             name='sexo'
             value={formik.values.sexo}
             onChange={formik.handleChange}
@@ -151,7 +146,6 @@ const Registro = () => {
             name='direccion'
             id='direccion'
             variant='outlined'
-            size='small'
             value={formik.values.direccion}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -162,7 +156,6 @@ const Registro = () => {
           <TextField
             id='correo'
             variant='outlined'
-            size='small'
             name='correo'
             value={formik.values.correo}
             onChange={formik.handleChange}
@@ -174,7 +167,6 @@ const Registro = () => {
           <TextField
             id='telefono'
             variant='outlined'
-            size='small'
             style={{ width: '100%' }}
             name='telefono'
             value={formik.values.telefono}
@@ -188,7 +180,6 @@ const Registro = () => {
             name='contrasena'
             id='contrasena'
             variant='outlined'
-            size='small'
             type='password'
             value={formik.values.contrasena}
             onChange={formik.handleChange}
@@ -202,7 +193,6 @@ const Registro = () => {
             name='repetirContrasena'
             id='repetirContrasena'
             variant='outlined'
-            size='small'
             type='password'
             value={formik.values.repetirContrasena}
             onChange={formik.handleChange}
@@ -212,12 +202,21 @@ const Registro = () => {
             placeholder='Repetir contraseña'
           />
 
-          <Button variant='contained' type='submit' sx={{ margin: 'auto' }}>
+          <Button variant='contained' type='submit' sx={{ margin: 'auto', marginTop: '10px' }}>
             Registrate
           </Button>
 
-          <Typography variant='body2' textAlign={'center'}>
-            ¿Ya tienes una cuenta? <Link to='/iniciarSesion'>Inicia sesión</Link>
+          <Typography variant='body2' textAlign={'center'} mt={2} fontSize={'16px'}>
+            ¿Tienes una cuenta?{' '}
+            <Link
+              to='/iniciarSesion'
+              style={{ textDecoration: 'none', fontWeight: 'bold' }}
+              color={'secondary'}
+            >
+              <Typography color={'secondary'} fontWeight={'bold'} display={'inline-block'}>
+                Inicia sesión
+              </Typography>
+            </Link>
           </Typography>
         </Box>
       </Box>

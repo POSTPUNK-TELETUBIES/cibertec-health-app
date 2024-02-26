@@ -1,13 +1,16 @@
-import { Box, Button, InputLabel, TextField, Typography } from '@mui/material'
+import { Box, Button, TextField, Typography } from '@mui/material'
 import { useSnackbar } from 'notistack'
 import { actualizarContrasena } from '../auth'
 import { useFormik } from 'formik'
-import { object, string } from 'yup'
+import { object, ref, string } from 'yup'
 
 const validateSchema = object({
-  contrasena: string()
+  newContrasena: string()
     .required('La contraseña es obligatoria')
     .min(6, 'La contraseña debe tener al menos 6 caracteres'),
+  repetirContrasena: string()
+    .oneOf([ref('newContrasena')], 'Las contraseñas deben coincidir')
+    .required('La confirmación de contraseña es requerida'),
 })
 
 const ChangePassword = () => {
@@ -16,6 +19,7 @@ const ChangePassword = () => {
   const formik = useFormik({
     initialValues: {
       newContrasena: '',
+      repetirContrasena: '',
     },
     validationSchema: validateSchema,
     onSubmit: async (formData) => {
@@ -36,7 +40,16 @@ const ChangePassword = () => {
   })
 
   return (
-    <>
+    <Box
+      display={'flex'}
+      flexDirection={'column'}
+      justifyContent={'center'}
+      alignItems={'center'}
+      maxWidth={400}
+      margin={'auto'}
+      minHeight={'100vh'}
+      p={4}
+    >
       <Typography variant='h2' textAlign={'center'} mb={4}>
         Cambiar contraseña
       </Typography>
@@ -46,24 +59,36 @@ const ChangePassword = () => {
         gap={2}
         component={'form'}
         onSubmit={formik.handleSubmit}
+        width={'100%'}
       >
-        <InputLabel htmlFor='newContrasena'>Ingresa tu nueva contraseña</InputLabel>
         <TextField
-          name='newContrasena'
-          id='newContrasena'
           variant='outlined'
-          size='small'
+          name='newContrasena'
+          type='password'
           value={formik.values.newContrasena}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.touched.newContrasena && Boolean(formik.errors.newContrasena)}
           helperText={formik.touched.newContrasena && formik.errors.newContrasena}
+          placeholder='Nueva contraseña'
         />
-        <Button variant='contained' type='submit'>
-          Guardar
+        <TextField
+          name='repetirContrasena'
+          id='repetirContrasena'
+          variant='outlined'
+          type='password'
+          value={formik.values.repetirContrasena}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          error={formik.touched.repetirContrasena && Boolean(formik.errors.repetirContrasena)}
+          helperText={formik.touched.repetirContrasena && formik.errors.repetirContrasena}
+          placeholder='Repetir nueva contraseña'
+        />
+        <Button variant='contained' type='submit' sx={{ m: 'auto' }}>
+          Actualizar mi contraseña
         </Button>
       </Box>
-    </>
+    </Box>
   )
 }
 
