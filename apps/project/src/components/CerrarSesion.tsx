@@ -32,7 +32,6 @@ const CerrarSesion = () => {
       })
     }
   }
-  /*  */
   const [open, setOpen] = useState(false)
 
   const handleClickOpen = () => {
@@ -52,12 +51,6 @@ const CerrarSesion = () => {
         Cerrar sesión
       </MenuItem>
 
-      {/*  */}
-
-      {/* <Button variant='outlined' onClick={handleClickOpen}>
-        Abrir modal
-      </Button> */}
-
       <Dialog
         open={open}
         onClose={handleClose}
@@ -73,12 +66,7 @@ const CerrarSesion = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button
-            onClick={onLogOut}
-            autoFocus
-            color='success'
-            variant='outlined'
-          >
+          <Button onClick={onLogOut} autoFocus color='success' variant='outlined'>
             Si, estoy seguro
           </Button>
           <Button onClick={handleClose} color='error' variant='outlined'>

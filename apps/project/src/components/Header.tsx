@@ -2,7 +2,6 @@ import { Box, Button, Paper } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../auth/useAuth'
 import AccountMenu from './AccountMenu'
-// import Logo from './Logo'
 import { MainLogo } from 'ui'
 
 const Header = () => {
@@ -12,7 +11,6 @@ const Header = () => {
     <Paper elevation={1} style={{ zIndex: 2 }}>
       <Box display='flex' gap={1} p={2} justifyContent={'space-between'}>
         <Link to='/' style={{ textDecoration: 'none' }}>
-          {/* <Logo /> */}
           <MainLogo />
         </Link>
 

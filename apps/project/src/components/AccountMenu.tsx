@@ -57,7 +57,6 @@ export default function AccountMenu() {
         id='account-menu'
         open={open}
         onClose={handleClose}
-        // onClick={handleClose}
         PaperProps={{
           elevation: 0,
           sx: {
@@ -132,21 +131,7 @@ export default function AccountMenu() {
           Cambiar mi contraseña
         </MenuItem>
 
-        {/* <MenuItem onClick={() => navigate('/editarPerfil')}>
-          <ListItemIcon>
-            <DeleteIcon />
-          </ListItemIcon>
-          Eliminar mi perfil
-        </MenuItem> */}
         <Divider />
-
-        {/* <MenuItem onClick={onLogOut}>
-          <ListItemIcon>
-            <Logout />
-          </ListItemIcon>
-          Cerrar sesión
-        </MenuItem> */}
-
         <CerrarSesion />
       </Menu>
     </React.Fragment>
