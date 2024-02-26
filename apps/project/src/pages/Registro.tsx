@@ -1,4 +1,15 @@
-import { Box, Button, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from '@mui/material'
 import { registrarse } from '../auth'
 import { useSnackbar } from 'notistack'
 import { Link } from 'react-router-dom'
@@ -31,15 +42,21 @@ const Registro = () => {
       const { error } = await registrarse(formData)
 
       if (error) {
-        enqueueSnackbar('Ocrrio un error al enviar el correo de verificación, intenta de nuevo.', {
-          variant: 'error',
-          autoHideDuration: 2000,
-        })
+        enqueueSnackbar(
+          'Ocurrio un error al enviar el correo de verificación, intentalo de nuevo.',
+          {
+            variant: 'error',
+            autoHideDuration: 2000,
+          }
+        )
       } else {
-        enqueueSnackbar('Te hemos enviado un enlace de verificación a tu correo electrónico', {
-          variant: 'success',
-          autoHideDuration: 2000,
-        })
+        enqueueSnackbar(
+          'Te hemos enviado un enlace de verificación a tu correo electrónico, revisa tu buzón.',
+          {
+            variant: 'success',
+            autoHideDuration: 4000,
+          }
+        )
       }
     },
   })
@@ -61,7 +78,7 @@ const Registro = () => {
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          opacity: 0.5,
+          opacity: 0.7,
         }}
       />
       <Box
@@ -72,6 +89,10 @@ const Registro = () => {
         width={'100%'}
         maxWidth={600}
         zIndex={1}
+        sx={{ backgroundColor: (theme) => theme.palette.background.default }}
+        p={4}
+        pb={5}
+        borderRadius={2}
       >
         <Typography variant='h2' textAlign={'center'} mb={4} component={'h3'}>
           Regístrate
@@ -119,28 +140,34 @@ const Registro = () => {
             placeholder='DNI'
           />
 
-          <InputLabel htmlFor='sexo'>Sexo</InputLabel>
-          <Select
-            labelId='sexo'
-            id='demo-select-small'
-            name='sexo'
-            value={formik.values.sexo}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={formik.touched.sexo && Boolean(formik.errors.sexo)}
-            placeholder='Sexo'
-          >
-            <MenuItem value=''>Ninguno</MenuItem>
-            <MenuItem value={'male'}>Masculino</MenuItem>
-            <MenuItem value={'female'}>Femenino</MenuItem>
-          </Select>
-
-          <InputLabel htmlFor='telefono'>Fecha de nacimiento</InputLabel>
-          <LocalizationProvider dateAdapter={AdapterLuxon}>
-            <DemoContainer components={['DatePicker']}>
-              <DatePicker onChange={formik.handleChange} />
-            </DemoContainer>
-          </LocalizationProvider>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <InputLabel htmlFor='sexo'>Sexo</InputLabel>
+              <Select
+                labelId='sexo'
+                id='demo-select-small'
+                name='sexo'
+                value={formik.values.sexo}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                error={formik.touched.sexo && Boolean(formik.errors.sexo)}
+                placeholder='Sexo'
+                sx={{ width: '100%', mt: 1 }}
+              >
+                <MenuItem value=''>Ninguno</MenuItem>
+                <MenuItem value={'male'}>Masculino</MenuItem>
+                <MenuItem value={'female'}>Femenino</MenuItem>
+              </Select>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <InputLabel htmlFor='telefono'>Fecha de nacimiento</InputLabel>
+              <LocalizationProvider dateAdapter={AdapterLuxon}>
+                <DemoContainer components={['DatePicker']}>
+                  <DatePicker onChange={formik.handleChange} />
+                </DemoContainer>
+              </LocalizationProvider>
+            </Grid>
+          </Grid>
 
           <TextField
             name='direccion'
@@ -202,19 +229,31 @@ const Registro = () => {
             placeholder='Repetir contraseña'
           />
 
+          <FormControlLabel
+            required
+            control={<Checkbox />}
+            label='Aceptar los términos y condiciones de HaiDoc'
+            sx={{ m: 'auto' }}
+          />
+
           <Button variant='contained' type='submit' sx={{ margin: 'auto', marginTop: '10px' }}>
-            Registrate
+            Registrarme
           </Button>
 
           <Typography variant='body2' textAlign={'center'} mt={2} fontSize={'16px'}>
-            ¿Tienes una cuenta?{' '}
+            ¿Tienes una cuenta en HaiDoc?{' '}
             <Link
               to='/iniciarSesion'
               style={{ textDecoration: 'none', fontWeight: 'bold' }}
               color={'secondary'}
             >
-              <Typography color={'secondary'} fontWeight={'bold'} display={'inline-block'}>
-                Inicia sesión
+              <Typography
+                component={'span'}
+                color={'secondary'}
+                fontWeight={'bold'}
+                display={'inline-block'}
+              >
+                Iniciar sesión
               </Typography>
             </Link>
           </Typography>

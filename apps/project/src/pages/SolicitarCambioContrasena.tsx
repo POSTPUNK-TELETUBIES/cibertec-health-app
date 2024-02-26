@@ -87,7 +87,12 @@ const SolicitarCambioContrasena = () => {
             style={{ textDecoration: 'none', fontWeight: 'bold' }}
             color={'secondary'}
           >
-            <Typography color={'secondary'} fontWeight={'bold'} display={'inline-block'}>
+            <Typography
+              component={'span'}
+              color={'secondary'}
+              fontWeight={'bold'}
+              display={'inline-block'}
+            >
               Inicia sesión
             </Typography>
           </Link>
@@ -96,7 +101,12 @@ const SolicitarCambioContrasena = () => {
         <Typography variant='body2' textAlign={'center'} fontSize={'16px'}>
           ¿No tienes una cuenta?{' '}
           <Link to='/registrate' style={{ textDecoration: 'none' }} color='red'>
-            <Typography color={'secondary'} fontWeight={'bold'} display={'inline-block'}>
+            <Typography
+              component={'span'}
+              color={'secondary'}
+              fontWeight={'bold'}
+              display={'inline-block'}
+            >
               Registrate
             </Typography>
           </Link>

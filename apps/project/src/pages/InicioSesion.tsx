@@ -23,14 +23,14 @@ const InicioSesion = () => {
     onSubmit: async (formData) => {
       const { error } = await iniciarSesion(formData)
       if (error) {
-        enqueueSnackbar('Error al iniciar sesión', {
+        enqueueSnackbar('ups, tu correo y/o contraseña son incorrectas', {
           variant: 'error',
-          autoHideDuration: 2000,
+          autoHideDuration: 3500,
         })
       } else {
         setIsAuthenticated(true)
         navigate('/')
-        enqueueSnackbar('Inicio de sesión exitoso', {
+        enqueueSnackbar('Se inició sesión con exito', {
           variant: 'success',
           autoHideDuration: 2000,
         })
@@ -43,7 +43,8 @@ const InicioSesion = () => {
       <Grid container sx={{ backgroundColor: '#f4feff', overflow: 'hidden' }}>
         <Grid
           item
-          xs={4.5}
+          xs={12}
+          md={4.5}
           p={6}
           display={'flex'}
           flexDirection={'column'}
@@ -51,7 +52,7 @@ const InicioSesion = () => {
           alignItems={'center'}
           height={'100vh'}
           width={'100%'}
-          marginLeft={'5%'}
+          marginLeft={{ md: '5%' }}
         >
           <Typography
             variant='h1'
@@ -100,7 +101,7 @@ const InicioSesion = () => {
 
             <Typography variant='body2' textAlign={'center'} mt={2}>
               <Link to='/solicitarCambioContrasena' style={{ textDecoration: 'none' }}>
-                <Typography color={'primary'} fontWeight={'bold'}>
+                <Typography color={'primary'} fontWeight={'bold'} component={'span'}>
                   ¿Olvidaste tu contraseña?
                 </Typography>
               </Link>
@@ -109,7 +110,12 @@ const InicioSesion = () => {
             <Typography variant='body2' textAlign={'center'} mt={2} fontSize={'16px'}>
               ¿No tienes una cuenta?{' '}
               <Link to='/registrate' style={{ textDecoration: 'none' }} color='red'>
-                <Typography color={'secondary'} fontWeight={'bold'} display={'inline-block'}>
+                <Typography
+                  color={'secondary'}
+                  fontWeight={'bold'}
+                  display={'inline-block'}
+                  component={'span'}
+                >
                   Registrate
                 </Typography>
               </Link>
