@@ -17,34 +17,45 @@ export const Hero = ()=>{
       sx={{
         backgroundColor:'#F4FEFF'
       }}
-      display={'flex'} 
-      gap={'1rem'}
-      paddingInline={{xs: '1rem', md:'6rem'}}
+      paddingInline={{xs: '1rem', md: '3rem',lg:'6rem'}}
       paddingBlock={4}
     >
+      <Box 
+        display={'flex'} 
+        gap={'1rem'} 
+        maxWidth={'90rem'} 
+        margin={'auto'}>
       <Stack
-        gap={3} 
-        justifyContent={'space-between'}
+        gap={'3.5rem'} 
+        justifyContent={'center'}
+        alignItems={{
+          xs: 'center',
+          lg: 'flex-start'
+        }}
         flexBasis={{
           xs: '100%',
-          md: '50%'
+          lg: '50%'
         }}
       >
         <Typography
           variant="h1" 
+          maxWidth={{xs:'50ch',lg:'unset'}}
         >
-          Estamos listos <br/>
+          Estamos listos <br />
           <Typography 
             component={'span'} 
             color="sheldon"
             fontSize={'inherit'} 
             fontWeight={'inherit'}
           >
-            para ayudarte <br/>
+            para ayudarte <Box component={'br'} display={{lg:'none'}}/>
           </Typography>
-          con tu salud 
+          {" "}con tu salud 
         </Typography>
-        <Typography variant="body1">
+        <Typography
+          variant="body1"
+          sx={{maxWidth: '50ch'}}
+          >
           En tiempos como hoy, tu salud es muy importante, especialmente porque el número de casos de COVID-19 es aumentando día a día, por eso estamos listos para ayudarte con tu consulta de salud
         </Typography>
         <Button 
@@ -56,7 +67,7 @@ export const Hero = ()=>{
         >
           Afiliate
         </Button>
-        <Box display={'flex'} gap={'1rem'}>
+        <Box display={'flex'} gap={'3rem'}>
           <Typography variant="h4">
             200<Plus/>
             <Typography>
@@ -81,20 +92,24 @@ export const Hero = ()=>{
         display={'grid'} 
         flexBasis={{
           xs: 0,
-          md: '50%'
+          lg: '50%'
         }} 
         sx={{
           placeItems: 'center',
           '& img':{
             position: 'static !important',
-            height: 'unset !important' 
-          }
+            height: 'unset !important' ,
+            maxHeight: '52rem',
+            maxWidth: '600px'
+          },
+          
         }}>
         <Image
           fill
           alt="doctor"
-          src={"/doctorsHero.png"}
+          src={"/doctorsHero.webp"}
         />
+      </Box>
       </Box>
     </Box>
   )

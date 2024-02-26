@@ -9,7 +9,8 @@ export const healthTheme = createTheme({
   typography:{
     body1:{
       color: dt.ColorGrey50,
-      fontWeight: 600
+      fontWeight: 600,
+      fontSize: '1.35rem'
     },
     body2:{
       color: '#172048'
