@@ -80,8 +80,11 @@ export const Navbar = ({
   actionButtons
 }: NavbarProps)=>{
   return(
-    <AppBar position='sticky'>
-      <Toolbar sx={{padding: '1rem', backgroundColor: 'white'}}>
+    <AppBar position='sticky' sx={{
+      paddingInline: '6rem',
+      backgroundColor: 'white'
+    }}>
+      <Toolbar sx={{padding: '1rem', }}>
         <Typography>Hai<Typography component={'strong'} >Doc</Typography></Typography>
         <MainLogo /> 
         <Box  sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} justifyContent={'space-around'}>
