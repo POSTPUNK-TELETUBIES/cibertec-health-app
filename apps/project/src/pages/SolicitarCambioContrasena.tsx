@@ -1,5 +1,4 @@
 import { Box, Button, InputLabel, TextField, Typography } from '@mui/material'
-import RegisterLayout from '../layouts/RegisterLayout'
 import { useSnackbar } from 'notistack'
 import { solicitarCambioContrasena } from '../auth'
 import { object, string } from 'yup'
@@ -40,8 +39,8 @@ const SolicitarCambioContrasena = () => {
   })
 
   return (
-    <RegisterLayout>
-      <Typography variant='h3' textAlign={'center'} mb={4}>
+    <>
+      <Typography variant='h2' textAlign={'center'} mb={4}>
         Solicitar cambio de contraseña
       </Typography>
       <Box
@@ -67,7 +66,7 @@ const SolicitarCambioContrasena = () => {
           Enviar correo
         </Button>
       </Box>
-    </RegisterLayout>
+    </>
   )
 }
 

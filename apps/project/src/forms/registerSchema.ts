@@ -1,4 +1,4 @@
-import { object, string, number, date } from 'yup'
+import { object, string, number, date, ref } from 'yup'
 
 const registerSchema = object({
   nombres: string()
@@ -24,6 +24,9 @@ const registerSchema = object({
   contrasena: string()
     .required('La contraseña es obligatoria')
     .min(6, 'La contraseña debe tener al menos 6 caracteres'),
+  repetirContrasena: string()
+    .oneOf([ref('contrasena')], 'Las contraseñas deben coincidir')
+    .required('La confirmación de contraseña es requerida'),
 })
 
 export default registerSchema

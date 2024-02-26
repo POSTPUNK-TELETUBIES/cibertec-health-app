@@ -1,5 +1,4 @@
 import { Box, Button, InputLabel, TextField, Typography } from '@mui/material'
-import RegisterLayout from '../layouts/RegisterLayout'
 import { useSnackbar } from 'notistack'
 import { actualizarContrasena } from '../auth'
 import { useFormik } from 'formik'
@@ -37,8 +36,8 @@ const ChangePassword = () => {
   })
 
   return (
-    <RegisterLayout>
-      <Typography variant='h3' textAlign={'center'} mb={4}>
+    <>
+      <Typography variant='h2' textAlign={'center'} mb={4}>
         Cambiar contraseña
       </Typography>
       <Box
@@ -64,7 +63,7 @@ const ChangePassword = () => {
           Guardar
         </Button>
       </Box>
-    </RegisterLayout>
+    </>
   )
 }
 
