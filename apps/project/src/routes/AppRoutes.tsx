@@ -1,5 +1,4 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
-import Home from '../pages/Home'
 import Dashboard from '../pages/Dashboard'
 import { v4 as uuid } from 'uuid'
 import Registro from '../pages/Registro'
@@ -12,15 +11,11 @@ import SolicitarCambioContrasena from '../pages/SolicitarCambioContrasena'
 const routesPublic = [
   {
     path: '*',
-    element: <Home />,
+    element: <InicioSesion />,
   },
   {
     path: '/registrate',
     element: <Registro />,
-  },
-  {
-    path: '/iniciarSesion',
-    element: <InicioSesion />,
   },
   {
     path: '/solicitarCambioContrasena',

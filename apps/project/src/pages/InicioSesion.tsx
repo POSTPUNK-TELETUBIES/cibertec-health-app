@@ -144,7 +144,6 @@ const InicioSesion = () => {
               style={{
                 position: 'absolute',
                 marginTop: '7%',
-                transform: 'scale(0.9)',
                 width: '60%',
                 height: '100%',
                 objectFit: 'contain',
