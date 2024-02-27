@@ -1,7 +1,8 @@
 export = {
   "color": {
     primary:{
-      main: {value: '#56E0E0'},
+      main: { value: '#56E0E0' },
+      25: { value: '#f4feff' },
       50: {value: '#007299'},
       200: { value: '#01739933'}
     },
