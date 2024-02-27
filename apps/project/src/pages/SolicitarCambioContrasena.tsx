@@ -45,12 +45,12 @@ const SolicitarCambioContrasena = () => {
       flexDirection={'column'}
       justifyContent={'center'}
       alignItems={'center'}
-      maxWidth={450}
+      maxWidth={600}
       margin={'auto'}
       minHeight={'100vh'}
       p={4}
     >
-      <Typography variant='h2' textAlign={'center'} mb={4}>
+      <Typography variant='h2' textAlign={'center'} mb={4} color={'secondary'}>
         Solicitar cambio de contraseña
       </Typography>
       <Box
@@ -61,9 +61,9 @@ const SolicitarCambioContrasena = () => {
         onSubmit={formik.handleSubmit}
         width={'100%'}
       >
-        <Typography variant='body1'>
-          Ingresa tu correo electrónico asociado a tu cuenta, si está registrado te enviaremos un
-          link a tu correo para que actualizes tu contraseña.
+        <Typography variant='body1' textAlign={'center'}>
+          Introduce tu correo electrónico asociado a tu cuenta. Si está registrado, te enviaremos un
+          enlace a tu correo para que puedas actualizar tu contraseña.
         </Typography>
         <TextField
           name='correo'
@@ -80,16 +80,18 @@ const SolicitarCambioContrasena = () => {
           Enviame el link
         </Button>
 
-        <Typography variant='body2' textAlign={'center'} mt={2} fontSize={'16px'}>
+        <Typography
+          variant='body2'
+          textAlign={'center'}
+          mt={2}
+          fontSize={'16px'}
+          color={'secondary'}
+        >
           ¿Tienes una cuenta?{' '}
-          <Link
-            to='/iniciarSesion'
-            style={{ textDecoration: 'none', fontWeight: 'bold' }}
-            color={'secondary'}
-          >
+          <Link to='/iniciarSesion' style={{ textDecoration: 'none', fontWeight: 'bold' }}>
             <Typography
               component={'span'}
-              color={'secondary'}
+              color={'primary'}
               fontWeight={'bold'}
               display={'inline-block'}
             >
@@ -98,12 +100,12 @@ const SolicitarCambioContrasena = () => {
           </Link>
         </Typography>
 
-        <Typography variant='body2' textAlign={'center'} fontSize={'16px'}>
+        <Typography variant='body2' textAlign={'center'} fontSize={'16px'} color={'secondary'}>
           ¿No tienes una cuenta?{' '}
           <Link to='/registrate' style={{ textDecoration: 'none' }} color='red'>
             <Typography
               component={'span'}
-              color={'secondary'}
+              color={'primary'}
               fontWeight={'bold'}
               display={'inline-block'}
             >

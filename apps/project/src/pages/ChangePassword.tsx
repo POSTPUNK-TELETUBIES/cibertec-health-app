@@ -50,7 +50,7 @@ const ChangePassword = () => {
       minHeight={'100vh'}
       p={4}
     >
-      <Typography variant='h2' textAlign={'center'} mb={4}>
+      <Typography variant='h2' textAlign={'center'} mb={4} color={'secondary'}>
         Cambiar contraseña
       </Typography>
       <Box
