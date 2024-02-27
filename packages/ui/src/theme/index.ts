@@ -6,6 +6,17 @@ const gradientBackground = `linear-gradient(97.65deg, ${dt.ColorPrimaryMain} 0.3
 const textGradient = gradientBackground.replace('93', '60')
 
 export const healthTheme = createTheme({
+  palette: {
+    primary: {
+      main: dt.ColorPrimary200,
+    },
+    secondary: {
+      main: dt.ColorPrimary50,
+    },
+    background: {
+      default: dt.ColorPrimary25,
+    },
+  },
   typography:{
     body1:{
       color: dt.ColorGrey50,
@@ -49,7 +60,7 @@ export const healthTheme = createTheme({
           style:{
             '&.MuiButton-containedPrimary':{
               background: gradientBackground,
-              boxShadow: `0px 10px 15px 0px ${dt.ColorPrimary200}`
+              boxShadow: `0px 10px 20px -12px ${dt.ColorPrimary200}`
             }
           }
         }
