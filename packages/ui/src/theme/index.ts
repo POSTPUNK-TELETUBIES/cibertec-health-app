@@ -11,7 +11,7 @@ export const healthTheme = createTheme({
       main: dt.ColorPrimary200,
     },
     secondary: {
-      main: dt.ColorPrimary50,
+      main: dt.ColorSecondaryMain,
     },
     background: {
       default: dt.ColorPrimary25,
