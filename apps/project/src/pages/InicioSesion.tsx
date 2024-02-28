@@ -55,14 +55,16 @@ const InicioSesion = () => {
           marginLeft={{ md: '5%' }}
         >
           <Typography
-            variant='h1'
             textAlign={'center'}
             mb={4}
             component={'h2'}
+            variant='h2'
             fontWeight={'lighter'}
+            color={'secondary'}
+            fontSize={'4.2rem'}
           >
             Hai<span style={{ fontWeight: 'bold' }}>Doc</span>{' '}
-            <MainLogo style={{ width: '60px', height: '65px', marginBottom: '20px' }} />
+            <MainLogo style={{ width: '50px', height: '60px', marginBottom: '15px' }} />
           </Typography>
           <Box
             display='flex'
@@ -111,7 +113,7 @@ const InicioSesion = () => {
               ¿No tienes una cuenta?{' '}
               <Link to='/registrate' style={{ textDecoration: 'none' }} color='red'>
                 <Typography
-                  color={'secondary'}
+                  color={'primary'}
                   fontWeight={'bold'}
                   display={'inline-block'}
                   component={'span'}

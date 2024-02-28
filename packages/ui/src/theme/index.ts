@@ -11,81 +11,58 @@ export const healthTheme = createTheme({
       main: dt.ColorPrimary200,
     },
     secondary: {
-      main: dt.ColorPrimary50,
+      main: dt.ColorSecondaryMain,
     },
     background: {
       default: dt.ColorPrimary25,
     },
   },
-  typography:{
-    body1:{
-      color: dt.ColorGrey50,
-      fontWeight: 600,
-      fontSize: '1.35rem'
-    },
-    body2:{
-      color: '#172048'
-    },
-    h1:{
-      color: '#172048',
-      fontSize: '4rem',
-      fontWeight: 900
-    },
-    h2:{
-      fontSize: '3rem',
-      fontWeight: 900,
-      color: '#172048'
-    },
-    h4:{
-      color: '#172048',
-      fontWeight: 900
-    }
-  },
-  components:{
-    MuiButton:{
-      styleOverrides:{
+  components: {
+    MuiButton: {
+      styleOverrides: {
         root: {
           textTransform: 'none',
           borderRadius: '2rem',
           paddingInline: '2.5rem',
           paddingBlock: '1rem',
-          fontWeight: 700
-        }
+          fontWeight: 700,
+        },
       },
-      variants:[
+      variants: [
         {
           props: {
-            variant: 'contained'
+            variant: 'contained',
           },
-          style:{
-            '&.MuiButton-containedPrimary':{
+          style: {
+            '&.MuiButton-containedPrimary': {
               background: gradientBackground,
-              boxShadow: `0px 10px 20px -12px ${dt.ColorPrimary200}`
-            }
-          }
-        }
+              boxShadow: `0px 10px 20px -12px ${dt.ColorPrimary200}`,
+            },
+          },
+        },
       ],
     },
-    MuiTypography:{
-      variants:[
+    MuiTypography: {
+      variants: [
         {
-          props:{
-            color: 'sheldon'
+          props: {
+            color: 'sheldon',
           },
-          style:{
+          style: {
             background: textGradient,
             '-webkit-background-clip': 'text',
             '-webkit-text-fill-color': 'transparent',
-          }
-        }
-      ]
+          },
+        },
+      ],
     },
-  MuiCard:{
-    styleOverrides:{
-      root:{
-        borderRadius: '2rem'
-      }
-    }
-  }
-  }
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: '2rem',
+        },
+      },
+    },
+  },
 })
+

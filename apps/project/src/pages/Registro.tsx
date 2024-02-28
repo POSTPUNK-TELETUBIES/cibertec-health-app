@@ -87,14 +87,14 @@ const Registro = () => {
         justifyContent={'center'}
         alignItems={'center'}
         width={'100%'}
-        maxWidth={600}
+        maxWidth={620}
         zIndex={1}
         sx={{ backgroundColor: (theme) => theme.palette.background.default }}
         p={4}
         pb={5}
         borderRadius={2}
       >
-        <Typography variant='h2' textAlign={'center'} mb={4} component={'h3'}>
+        <Typography variant='h2' textAlign={'center'} mb={4} component={'h3'} color={'secondary'}>
           Regístrate
         </Typography>
         <Box
@@ -242,14 +242,10 @@ const Registro = () => {
 
           <Typography variant='body2' textAlign={'center'} mt={2} fontSize={'16px'}>
             ¿Tienes una cuenta en HaiDoc?{' '}
-            <Link
-              to='/iniciarSesion'
-              style={{ textDecoration: 'none', fontWeight: 'bold' }}
-              color={'secondary'}
-            >
+            <Link to='/iniciarSesion' style={{ textDecoration: 'none', fontWeight: 'bold' }}>
               <Typography
                 component={'span'}
-                color={'secondary'}
+                color={'primary'}
                 fontWeight={'bold'}
                 display={'inline-block'}
               >
