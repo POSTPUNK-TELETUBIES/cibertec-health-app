@@ -15,10 +15,13 @@ export const OurServices = ()=>{
     },
     
   }}>
-    <Typography variant="h4" sx={{marginBottom: '3rem'}}>
+    <Typography variant="h4" sx={{
+      margin: '3rem 0',
+      fontSize: '2.9rem',
+      }}>
       Nuestros
       <Typography
-        variant="span"
+        component={'span'} 
         color="sheldon"
         fontSize={'inherit'} 
         fontWeight={'inherit'}
