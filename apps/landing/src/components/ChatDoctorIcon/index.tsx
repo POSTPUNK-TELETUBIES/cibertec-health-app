@@ -3,7 +3,13 @@ import { SvgIcon, SvgIconProps } from "@mui/material";
 export const ChatDoctorIcon = (props: SvgIconProps) => <SvgIcon sx={{
   fontSize: '98px',
   marginBlock: '2rem',
-  borderRadius: '50%'
+  borderRadius: '50%',
+  
+  height: '20rem',
+  width: '20rem',
+  border: '2px solid #4ED6DA',
+  backgroundColor: 'white',
+  boxShadow: '4px 5px 12px -9px black', 
 }} {...props}>
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
