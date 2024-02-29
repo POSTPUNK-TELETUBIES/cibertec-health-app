@@ -1,0 +1,59 @@
+on:
+  push:
+    tags:
+      - "prod-project*"
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  build:
+    environment: prod
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Build lib design-tokens
+        working-directory: packages/design-tokens
+        run: |
+          pnpm install
+          pnpm build
+
+      - name: Build lib ui
+        working-directory: packages/ui
+        run: |
+          pnpm install
+          pnpm build
+
+      - name: Establecer variables
+        run: | 
+          echo "BASEPATH=${{vars.BASEPATH}}" >> $GITHUB_ENV
+          echo "CSP_CONNECT_LINKS=${{vars.CSP_CONNECT_LINKS}}" >> $GITHUB_ENV
+
+      - name: Build project
+        working-directory: apps/project
+        env: 
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_KEY: ${{ secrets.VITE_SUPABASE_KEY }}
+        run: |
+          pnpm install
+          pnpm build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: apps/project/dist
+          destination_dir: prod/project
