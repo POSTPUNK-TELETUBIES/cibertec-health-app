@@ -60,6 +60,11 @@ export const healthTheme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: '2rem',
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "1rem",
         },
       },
     },
