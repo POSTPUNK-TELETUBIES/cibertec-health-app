@@ -42,7 +42,7 @@ export const sucursalExample: Template<Sucursal> = {
   nombre: 'CENTRO MEDICO DE LA COLINA',
   direccion: faker.location.streetAddress(true),
   telefono: faker.phone.number(),
-  ubicacion_mapa: faker.location.nearbyGPSCoordinate(),
+  ubicacion_mapa: faker.internet.url(),
 }
 
 export const citaMedicaExample: Omit<
