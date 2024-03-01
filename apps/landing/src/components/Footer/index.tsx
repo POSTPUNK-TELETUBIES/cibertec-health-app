@@ -95,7 +95,7 @@ export const Footer = () => {
                 key={text}
                 color="inherit"
                 underline="hover"
-                sx={{ display: "block", mb: 0.5, mb: 0.5, fontWeight: 'normal', fontSize: '20px' }}
+                sx={{ display: "block", mb: 0.5, fontWeight: 'normal', fontSize: '20px' }}
               >
                 {text}
               </Link>
