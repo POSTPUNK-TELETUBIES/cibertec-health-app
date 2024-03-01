@@ -19,16 +19,20 @@ const PerfilDoctor = () => {
 
   return (
     <HomeLayout>
-      <Container>
+      <Container sx={{ my: 4 }}>
         <Paper
           elevation={3}
           sx={{
-            p: 2,
+            p: 4,
+            py: 6,
             mt: 2,
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
+            width: '100%',
+            maxWidth: 600,
+            margin: 'auto',
           }}
         >
           <Avatar src='/static/images/avatar/1.jpg' sx={{ width: 200, height: 200 }} />
@@ -41,7 +45,7 @@ const PerfilDoctor = () => {
           <Typography variant='h5' mt={2} color={'primary'}>
             Cargo:
           </Typography>
-          <Typography variant='body1' mt={2}>
+          <Typography variant='h6' mt={2}>
             {'Doctor'}
           </Typography>
 
@@ -50,6 +54,39 @@ const PerfilDoctor = () => {
           </Typography>
           <Typography variant='h6' mt={2}>
             {doctor.especialidad}
+          </Typography>
+
+          <Typography variant='h5' mt={2} color={'primary'}>
+            Correo electrónico
+          </Typography>
+          <Typography variant='h6' mt={2}>
+            <a
+              href={`mailto:${doctor.email}`}
+              style={{ textDecoration: 'none', color: 'black' }}
+              title='Enviar correo'
+            >
+              {doctor.email}
+            </a>
+          </Typography>
+
+          <Typography variant='h5' mt={2} color={'primary'}>
+            Teléfono
+          </Typography>
+          <Typography variant='h6' mt={2}>
+            <a
+              href={`tel:${doctor.telefono}`}
+              style={{ textDecoration: 'none', color: 'black' }}
+              title='Llamar'
+            >
+              {doctor.telefono}
+            </a>
+          </Typography>
+
+          <Typography variant='h5' mt={2} color={'primary'}>
+            DNI
+          </Typography>
+          <Typography variant='h6' mt={2}>
+            {doctor.dni}
           </Typography>
         </Paper>
       </Container>
