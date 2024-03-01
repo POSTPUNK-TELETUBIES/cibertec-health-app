@@ -1,5 +1,4 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
-import Dashboard from '../pages/Dashboard'
 import { v4 as uuid } from 'uuid'
 import Registro from '../pages/Registro'
 import InicioSesion from '../pages/InicioSesion'
@@ -31,11 +30,7 @@ const routesPublic = [
 
 const routesPrivate = [
   {
-    path: '*',
-    element: <Dashboard />,
-  },
-  {
-    path: '/reservarNuevaCita',
+    path: '/*',
     element: <ReservarNuevaCita />,
   },
   {

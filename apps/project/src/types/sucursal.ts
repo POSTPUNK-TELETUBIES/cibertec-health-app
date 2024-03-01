@@ -4,7 +4,7 @@ export interface Sucursal {
   nombre: string
   direccion: string
   telefono: string
-  ubicacion_mapa: [latitude: number, longitude: number]
+  ubicacion_mapa: string
 }
 
 export type SucursalPayload = Partial<Omit<Sucursal, 'id' | 'created_at'>>

@@ -6,10 +6,10 @@ interface CardSucursalProps {
   nombre: string
   direccion: string
   telefono: string
-  ubicacion_mapa: [latitude: number, longitude: number]
+  ubicacion_mapa: string
 }
 
-const CardSucursal = ({ nombre, direccion, telefono }: CardSucursalProps) => {
+const CardSucursal = ({ nombre, direccion, telefono, ubicacion_mapa }: CardSucursalProps) => {
   return (
     <Box border={'2px solid #1086a6'} py={2} px={2} borderRadius={4}>
       <Typography variant='h5' fontWeight={'bold'} mb={1} color={'primary'}>
@@ -23,7 +23,7 @@ const CardSucursal = ({ nombre, direccion, telefono }: CardSucursalProps) => {
         <Button variant='outlined' startIcon={<LocalPhoneIcon />} href={`tel:+${telefono}`}>
           {telefono}
         </Button>
-        <Button variant='outlined' startIcon={<RoomIcon />} href={''} target='_blank'>
+        <Button variant='outlined' startIcon={<RoomIcon />} href={ubicacion_mapa} target='_blank'>
           Como llegar
         </Button>
       </Box>
