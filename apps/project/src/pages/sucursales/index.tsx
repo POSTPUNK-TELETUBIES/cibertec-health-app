@@ -3,13 +3,22 @@ import HomeLayout from '../../layouts/HomeLayout'
 import Title from '../../components/Title'
 import Separador from '../../components/Separador'
 import CardSucursal from '../../components/CardSucursal'
-// import SelectorProvincia from './SelectorProvincia'
 import db from '../../db'
 import { SucursalResponse } from '../../types/sucursal'
-
-const sucursales: SucursalResponse[] = (await db.sucursal.getMany(0, 50)) as SucursalResponse[]
+import { useEffect, useState } from 'react'
 
 const VerSucursales = () => {
+  const [sucursales, setSucursales] = useState<SucursalResponse[]>([])
+
+  useEffect(() => {
+    const fetchSucursales = async () => {
+      const sucursales = (await db.sucursal.getMany(0, 50)) as SucursalResponse[]
+      setSucursales(sucursales)
+    }
+
+    fetchSucursales()
+  }, [])
+
   return (
     <HomeLayout>
       <Container>

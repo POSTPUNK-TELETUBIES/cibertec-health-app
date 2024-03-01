@@ -9,7 +9,7 @@ interface CardSucursalProps {
   ubicacion_mapa: [latitude: number, longitude: number]
 }
 
-const CardSucursal = ({ nombre, direccion, telefono, ubicacion_mapa }: CardSucursalProps) => {
+const CardSucursal = ({ nombre, direccion, telefono }: CardSucursalProps) => {
   return (
     <Box border={'2px solid #1086a6'} py={2} px={2} borderRadius={4}>
       <Typography variant='h5' fontWeight={'bold'} mb={1} color={'primary'}>

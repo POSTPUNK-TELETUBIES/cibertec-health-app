@@ -5,11 +5,8 @@ import { Doctor } from '../../types/doctor'
 import db from '../../db'
 import { especialidades, tiposCitaMedica } from '../../examples/others'
 import { Sucursal } from '../../types/sucursal'
-import { citaMedicaExample } from '../../examples'
 import { useSnackbar } from 'notistack'
-import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers'
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo'
-import { AdapterLuxon } from '@mui/x-date-pickers/AdapterLuxon'
+import { useEffect, useState } from 'react'
 
 const validateSchema = object({
   doctor: string().required('Es obligatoria'),
@@ -19,11 +16,26 @@ const validateSchema = object({
   fecha: string().required('Es obligatoria'),
 })
 
-const doctores: Doctor[] = (await db.doctor.getMany(0, 50)) as Doctor[]
-const sucursales: Sucursal[] = (await db.sucursal.getMany(0, 50)) as Sucursal[]
-
 const Formulario = () => {
   const { enqueueSnackbar } = useSnackbar()
+
+  const [doctores, setDoctores] = useState<Doctor[]>([])
+  const [sucursales, setSucursales] = useState<Sucursal[]>([])
+
+  useEffect(() => {
+    const fetchDoctores = async () => {
+      const doctores = (await db.doctor.getMany(0, 50)) as Doctor[]
+      setDoctores(doctores)
+    }
+
+    const fetchSucursales = async () => {
+      const sucursales = (await db.sucursal.getMany(0, 50)) as Sucursal[]
+      setSucursales(sucursales)
+    }
+
+    fetchDoctores()
+    fetchSucursales()
+  }, [])
 
   const formik = useFormik({
     initialValues: {

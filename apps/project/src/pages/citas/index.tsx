@@ -5,11 +5,21 @@ import Separador from '../../components/Separador'
 import CardCitaMedica from '../../components/CardCitaMedica'
 import db from '../../db'
 import { CitaMedica } from '../../types/citaMedica'
+import { useEffect, useState } from 'react'
 // import Selectores from './Selectores'
 
-const citas: CitaMedica[] = (await db.citaMedica.getMany(0, 50)) as CitaMedica[]
+// const citas: CitaMedica[] = (await db.citaMedica.getMany(0, 50)) as CitaMedica[]
 
 const MisCitasMedicas = () => {
+  const [citas, setCitas] = useState<CitaMedica[]>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setCitas((await db.citaMedica.getMany(0, 50)) as CitaMedica[])
+    }
+    fetchData()
+  }, [])
+
   return (
     <HomeLayout>
       <Container>

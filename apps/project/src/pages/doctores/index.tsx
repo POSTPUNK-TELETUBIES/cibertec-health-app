@@ -5,11 +5,21 @@ import Separador from '../../components/Separador'
 import CardDoctor from '../../components/CardDoctor'
 import { Doctor } from '../../types/doctor'
 import db from '../../db'
+import { useEffect, useState } from 'react'
 // import Selectores from './Selectores'
 
-const doctores: Doctor[] = (await db.doctor.getMany(0, 50)) as Doctor[]
+// const doctores: Doctor[] = (await db.doctor.getMany(0, 50)) as Doctor[]
 
 const VerDoctores = () => {
+  const [doctores, setDoctores] = useState<Doctor[]>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setDoctores((await db.doctor.getMany(0, 50)) as Doctor[])
+    }
+    fetchData()
+  }, [])
+
   return (
     <HomeLayout>
       <Container>

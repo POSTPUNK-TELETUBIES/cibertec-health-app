@@ -1,5 +1,5 @@
 import { fakerES as faker } from '@faker-js/faker'
-import { cargos, especialidades, estados_cita, tiposCitaMedica } from './others'
+import { cargos, especialidades, tiposCitaMedica } from './others'
 import { Paciente } from '../types/paciente'
 import { Doctor } from '../types/doctor'
 import { Sucursal } from '../types/sucursal'

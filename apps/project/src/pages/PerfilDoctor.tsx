@@ -12,7 +12,6 @@ const PerfilDoctor = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // setSucursal((await db.sucursal.getOne(doctor.centro_medico)) as Sucursal)
       setDoctor((await db.doctor.getOne(id ?? '1')) as Doctor)
     }
     fetchData()
