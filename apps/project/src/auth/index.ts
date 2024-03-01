@@ -54,13 +54,7 @@ export const recuperarUsuario = async () => {
 export const solicitarCambioContrasena = async (payload: {
   correo: string
 }) => {
-  const { data, error } = await supabase.auth.resetPasswordForEmail(
-    payload.correo,
-    {
-      redirectTo:
-        'https://jaenfigueroa.github.io/proyecto-experiencias-formativas-1/#cambiarContrasena',
-    },
-  )
+  const { data, error } = await supabase.auth.resetPasswordForEmail(payload.correo)
 
   return { data, error }
 }
