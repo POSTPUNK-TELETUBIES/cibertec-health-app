@@ -1,19 +1,27 @@
-import { Box, Card, Typography, CardProps} from "@mui/material"
+import { Box, BoxProps, Card, Typography, CardProps} from "@mui/material"
+import useMediaQuery from '@mui/material/useMediaQuery';
+import landingTheme from '@/theme'
 import { ChatDoctorIcon } from "../ChatDoctorIcon"
 import { PillsIcon } from "../PillsIcon"
 import { HospitalIcon } from "../HospitalIcon"
-import { BoltRounded } from "@mui/icons-material"
 
+// const BoxResponsiveCards = ({ ...rest }: BoxProps) => {
+//   const isSmallScreen = useMediaQuery('(min-width: 600px)');
+//   return (
+//     <Box display='flex' gap={4} flexDirection={ isSmallScreen ? 'column' : 'row'}
+//       {...rest}
+//     />
+//   )
+// };
 const CardFlexBg = ({sx, ...rest}:CardProps)=>{
   return<Card sx={[
     {
       flexBasis:{xs: '100%', md: '33%'},
-      background: '#F4FEFF',
+      backgroundColor: '#F4FEFF',
       padding: '5rem 2rem',
       boxShadow: '4px 5px 29px -13px black',
       transition: 'background-color .2s ease',
       '&:hover': {
-        // background: 'linear-gradient(180deg, #4ED6DA 0%, #04789D 100%)',
         backgroundColor: '#4ED6DA',
         backgroundImage: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 50%, #04789D 100%)',
         '& > h4 , & > p':{
@@ -54,7 +62,7 @@ export const CategoryShow = ()=>{
           <ChatDoctorIcon />
         </Box>
         <Typography fontSize={'1.5rem'} variant='h4'>
-          Chat con doctora
+          Chat con doctor
         </Typography>
         <Typography variant='body2'>
           Podrás conectarte de forma directa, rápida y sencilla, y no tendrás que dudar de la calidad de la consulta y el tratamiento ofrecido.
@@ -75,7 +83,7 @@ export const CategoryShow = ()=>{
           }} />
         </Box>
         <Typography fontSize={'1.5rem'} variant='h4'>
-          Chat con doctor
+          Farmacia
         </Typography>
         <Typography variant='body2'>
           Hable sobre problemas de salud que está experimentando y no dude en preguntar sobre el tratamiento adecuado.
@@ -96,10 +104,10 @@ export const CategoryShow = ()=>{
           }} />
         </Box>
         <Typography fontSize={'1.5rem'} variant='h4'>
-          Chat con doctor
+          Clinicas
         </Typography>
         <Typography variant='body2'>
-          Obtenga servicios prioritarios en clinicas con Haidoc. Lo que te permite acudir a la clínica de forma más práctica y ahorarr tiempo.
+          Obtenga servicios prioritarios en clinicas con Haidoc. Lo que te permite acudir a la clínica de forma más práctica y ahorar tiempo.
         </Typography>
       </CardFlexBg>
 
