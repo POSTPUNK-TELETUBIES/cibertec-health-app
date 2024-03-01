@@ -7,6 +7,12 @@ import { SnackbarProvider } from 'notistack'
 import ChangePassword from '../pages/ChangePassword'
 import { useAuth } from '../auth/useAuth'
 import SolicitarCambioContrasena from '../pages/SolicitarCambioContrasena'
+import EditarPerfil from '../pages/EditarPerfil'
+import VerSucursales from '../pages/sucursales'
+import VerDoctores from '../pages/doctores'
+import MisCitasMedicas from '../pages/citas'
+import ReservarNuevaCita from '../pages/reservarCIta'
+import PerfilDoctor from '../pages/PerfilDoctor'
 
 const routesPublic = [
   {
@@ -27,6 +33,30 @@ const routesPrivate = [
   {
     path: '*',
     element: <Dashboard />,
+  },
+  {
+    path: '/reservarNuevaCita',
+    element: <ReservarNuevaCita />,
+  },
+  {
+    path: '/misCitasMedicas',
+    element: <MisCitasMedicas />,
+  },
+  {
+    path: '/verDoctores',
+    element: <VerDoctores />,
+  },
+  {
+    path: '/verSucursales',
+    element: <VerSucursales />,
+  },
+  {
+    path: '/editarPerfil',
+    element: <EditarPerfil />,
+  },
+  {
+    path: '/perfilDoctor/:id',
+    element: <PerfilDoctor />,
   },
   {
     path: '/cambiarContrasena',

@@ -1,3 +1,4 @@
+import { recuperarUsuario } from '../auth'
 import supabase from '../config/supabase'
 import DBService from '../db/DBService'
 import { CitaMedicaPayload, CitaMedicaResponse } from '../types/citaMedica'
@@ -14,19 +15,14 @@ export default class CitaMedicaService implements DBService {
     }
 
     if (!citasMedicas || citasMedicas.length === 0) {
-      throw new Error(
-        'No se encontró ningúna cita medica con el ID proporcionado',
-      )
+      throw new Error('No se encontró ningúna cita medica con el ID proporcionado')
     }
 
     const citaMedica = citasMedicas[0] as CitaMedicaResponse
     return citaMedica
   }
 
-  async getMany(
-    offset: number = 0,
-    limit: number = 0,
-  ): Promise<CitaMedicaResponse[]> {
+  async getMany(offset: number = 0, limit: number = 0): Promise<CitaMedicaResponse[]> {
     const { data: citasMedicas, error } = await supabase
       .from('cita_medica')
       .select('*')
@@ -40,20 +36,22 @@ export default class CitaMedicaService implements DBService {
   }
 
   async createOne(payload: CitaMedicaPayload): Promise<CitaMedicaResponse> {
-    const { data: doctores, error } = await supabase
+    const user = await recuperarUsuario()
+
+    const { data: citaMedica, error } = await supabase
       .from('cita_medica')
-      .insert([{ ...payload }])
+      .insert([{ ...payload, paciente_id: user?.id }])
       .select('*')
 
     if (error) {
       console.log(error)
     }
 
-    if (!doctores || doctores.length === 0) {
+    if (!citaMedica || citaMedica.length === 0) {
       throw new Error('No se encontró ')
     }
 
-    return doctores[0] as CitaMedicaResponse
+    return citaMedica[0] as CitaMedicaResponse
   }
 
   async deleteOne(id: string): Promise<void> {
@@ -64,10 +62,7 @@ export default class CitaMedicaService implements DBService {
     }
   }
 
-  async updateOne(
-    id: string,
-    payload: CitaMedicaPayload,
-  ): Promise<CitaMedicaResponse> {
+  async updateOne(id: string, payload: CitaMedicaPayload): Promise<CitaMedicaResponse> {
     const { data: citasMedicas, error } = await supabase
       .from('cita_medica')
       .update({ ...payload })
@@ -79,9 +74,7 @@ export default class CitaMedicaService implements DBService {
     }
 
     if (!citasMedicas || citasMedicas.length === 0) {
-      throw new Error(
-        'No se encontró ningúna cita medica con el ID proporcionado',
-      )
+      throw new Error('No se encontró ningúna cita medica con el ID proporcionado')
     }
 
     const citaMedica = citasMedicas[0] as CitaMedicaResponse

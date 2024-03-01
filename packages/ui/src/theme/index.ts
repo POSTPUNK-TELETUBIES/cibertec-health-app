@@ -50,8 +50,8 @@ export const healthTheme = createTheme({
           },
           style: {
             background: textGradient,
-            '-webkit-background-clip': 'text',
-            '-webkit-text-fill-color': 'transparent',
+            backgroundClip: 'text',
+            color: 'transparent',
           },
         },
       ],

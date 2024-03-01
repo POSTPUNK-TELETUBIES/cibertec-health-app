@@ -1,5 +1,5 @@
 import { fakerES as faker } from '@faker-js/faker'
-import { cargos, especialidades, estados_cita, tiposCitaMedica } from './others'
+import { cargos, especialidades, tiposCitaMedica } from './others'
 import { Paciente } from '../types/paciente'
 import { Doctor } from '../types/doctor'
 import { Sucursal } from '../types/sucursal'
@@ -47,14 +47,14 @@ export const sucursalExample: Template<Sucursal> = {
 
 export const citaMedicaExample: Omit<
   CitaMedica,
-  'id' | 'created_at' | 'paciente_id'
+  'id' | 'created_at' | 'paciente_id' | 'estado' | 'archivos_adjuntos'
 > = {
   // paciente_id: faker.number.int({ min: 1, max: 2 }).toString(),
   doctor_id: faker.string.uuid(),
   sucursal_id: faker.string.uuid(),
-  fecha: faker.date.birthdate({ min: 2024, max: 2027, mode: 'year' }),
   especialidad: faker.helpers.arrayElement(especialidades),
-  estado: faker.helpers.arrayElement(estados_cita),
   tipo_cita: faker.helpers.arrayElement(tiposCitaMedica),
+  fecha: faker.date.birthdate({ min: 2024, max: 2027, mode: 'year' }),
+  // estado: faker.helpers.arrayElement(estados_cita),
   // archivos_adjuntos: string[]
 }

@@ -2,16 +2,27 @@ import { Box, Button, Paper } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../auth/useAuth'
 import AccountMenu from './AccountMenu'
-import { MainLogo } from 'ui'
+import Logo from './Logo'
 
 const Header = () => {
   const { isAuthenticated } = useAuth()
 
   return (
-    <Paper elevation={1} style={{ zIndex: 2 }}>
-      <Box display='flex' gap={1} p={2} justifyContent={'space-between'}>
+    <Paper
+      elevation={0}
+      style={{ zIndex: 2 }}
+      sx={{ background: (theme) => theme.palette.background.default }}
+    >
+      <Box
+        display='flex'
+        gap={1}
+        py={2}
+        px={4}
+        justifyContent={'space-between'}
+        alignItems={'center'}
+      >
         <Link to='/' style={{ textDecoration: 'none' }}>
-          <MainLogo />
+          <Logo />
         </Link>
 
         <Box display='flex' gap={2}>
