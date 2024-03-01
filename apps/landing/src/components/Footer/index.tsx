@@ -1,5 +1,6 @@
 import { Box, Button, Card, Link, Stack, Typography } from "@mui/material";
 
+
 export const Footer = () => {
   const footerLinks = {
     Tutorify: ["Learn more than just a language"],
