@@ -9,14 +9,13 @@ import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../auth/useAuth'
-import NotificationsIcon from '@mui/icons-material/Notifications'
 import KeyIcon from '@mui/icons-material/Key'
-import EditIcon from '@mui/icons-material/Edit'
 import EventIcon from '@mui/icons-material/Event'
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital'
 import MoreTimeIcon from '@mui/icons-material/MoreTime'
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork'
 import CerrarSesion from './CerrarSesion'
+import { useMediaQuery } from '@mui/material'
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
@@ -31,13 +30,40 @@ export default function AccountMenu() {
 
   const { user } = useAuth()
   const navigate = useNavigate()
+  const isMobile = useMediaQuery('(max-width: 1040px)')
 
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <MenuItem onClick={handleClose}>
-          <NotificationsIcon /> Notificaciones
-        </MenuItem>
+        {!isMobile && (
+          <>
+            <MenuItem onClick={() => navigate('/reservarNuevaCita')}>
+              <ListItemIcon>
+                <MoreTimeIcon />
+              </ListItemIcon>
+              Reservar nueva cita
+            </MenuItem>
+            <Divider />
+            <MenuItem onClick={() => navigate('/misCitasMedicas')}>
+              <ListItemIcon>
+                <EventIcon />
+              </ListItemIcon>
+              Mis citas médicas
+            </MenuItem>
+            <MenuItem onClick={() => navigate('/verDoctores')}>
+              <ListItemIcon>
+                <LocalHospitalIcon />
+              </ListItemIcon>
+              Doctores
+            </MenuItem>
+            <MenuItem onClick={() => navigate('/verSucursales')}>
+              <ListItemIcon>
+                <MapsHomeWorkIcon />
+              </ListItemIcon>
+              Sucursales
+            </MenuItem>
+          </>
+        )}
 
         <Tooltip title='Perfil'>
           <IconButton
@@ -91,38 +117,39 @@ export default function AccountMenu() {
         </MenuItem>
         <Divider />
 
-        <MenuItem onClick={() => navigate('/reservarCita')}>
-          <ListItemIcon>
-            <MoreTimeIcon />
-          </ListItemIcon>
-          Reservar nueva cita
-        </MenuItem>
-        <MenuItem onClick={() => navigate('/misCitas')}>
-          <ListItemIcon>
-            <EventIcon />
-          </ListItemIcon>
-          Mis citas médicas
-        </MenuItem>
-        <MenuItem onClick={() => navigate('/doctoresFavoritos')}>
-          <ListItemIcon>
-            <LocalHospitalIcon />
-          </ListItemIcon>
-          Doctores favoritos
-        </MenuItem>
-        <Divider />
-        <MenuItem onClick={() => navigate('/verSucursales')}>
-          <ListItemIcon>
-            <MapsHomeWorkIcon />
-          </ListItemIcon>
-          Ver sucursales
-        </MenuItem>
-        <Divider />
-        <MenuItem onClick={() => navigate('/editarPerfil')}>
-          <ListItemIcon>
-            <EditIcon />
-          </ListItemIcon>
-          Actualizar mis datos personales
-        </MenuItem>
+        {isMobile && (
+          <>
+            <MenuItem onClick={() => navigate('/reservarNuevaCita')}>
+              <ListItemIcon>
+                <MoreTimeIcon />
+              </ListItemIcon>
+              Reservar nueva cita
+            </MenuItem>
+
+            <MenuItem onClick={() => navigate('/misCitasMedicas')}>
+              <ListItemIcon>
+                <EventIcon />
+              </ListItemIcon>
+              Mis citas médicas
+            </MenuItem>
+
+            <MenuItem onClick={() => navigate('/verDoctores')}>
+              <ListItemIcon>
+                <LocalHospitalIcon />
+              </ListItemIcon>
+              Ver doctores
+            </MenuItem>
+
+            <MenuItem onClick={() => navigate('/verSucursales')}>
+              <ListItemIcon>
+                <MapsHomeWorkIcon />
+              </ListItemIcon>
+              Ver sucursales
+            </MenuItem>
+
+            <Divider />
+          </>
+        )}
 
         <MenuItem onClick={() => navigate('/cambiarContrasena')}>
           <ListItemIcon>

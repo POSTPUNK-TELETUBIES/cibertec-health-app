@@ -3,6 +3,7 @@ import { useSnackbar } from 'notistack'
 import { actualizarContrasena } from '../auth'
 import { useFormik } from 'formik'
 import { object, ref, string } from 'yup'
+import HomeLayout from '../layouts/HomeLayout'
 
 const validateSchema = object({
   newContrasena: string()
@@ -40,55 +41,57 @@ const ChangePassword = () => {
   })
 
   return (
-    <Box
-      display={'flex'}
-      flexDirection={'column'}
-      justifyContent={'center'}
-      alignItems={'center'}
-      maxWidth={400}
-      margin={'auto'}
-      minHeight={'100vh'}
-      p={4}
-    >
-      <Typography variant='h2' textAlign={'center'} mb={4} color={'secondary'}>
-        Cambiar contraseña
-      </Typography>
+    <HomeLayout>
       <Box
-        display='flex'
-        flexDirection='column'
-        gap={2}
-        component={'form'}
-        onSubmit={formik.handleSubmit}
-        width={'100%'}
+        display={'flex'}
+        flexDirection={'column'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        maxWidth={400}
+        margin={'auto'}
+        minHeight={'90vh'}
+        p={4}
       >
-        <TextField
-          variant='outlined'
-          name='newContrasena'
-          type='password'
-          value={formik.values.newContrasena}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          error={formik.touched.newContrasena && Boolean(formik.errors.newContrasena)}
-          helperText={formik.touched.newContrasena && formik.errors.newContrasena}
-          placeholder='Nueva contraseña'
-        />
-        <TextField
-          name='repetirContrasena'
-          id='repetirContrasena'
-          variant='outlined'
-          type='password'
-          value={formik.values.repetirContrasena}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          error={formik.touched.repetirContrasena && Boolean(formik.errors.repetirContrasena)}
-          helperText={formik.touched.repetirContrasena && formik.errors.repetirContrasena}
-          placeholder='Repetir nueva contraseña'
-        />
-        <Button variant='contained' type='submit' sx={{ m: 'auto' }}>
-          Actualizar mi contraseña
-        </Button>
+        <Typography variant='h2' textAlign={'center'} mb={4} color={'secondary'}>
+          Cambiar contraseña
+        </Typography>
+        <Box
+          display='flex'
+          flexDirection='column'
+          gap={2}
+          component={'form'}
+          onSubmit={formik.handleSubmit}
+          width={'100%'}
+        >
+          <TextField
+            variant='outlined'
+            name='newContrasena'
+            type='password'
+            value={formik.values.newContrasena}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.newContrasena && Boolean(formik.errors.newContrasena)}
+            helperText={formik.touched.newContrasena && formik.errors.newContrasena}
+            placeholder='Nueva contraseña'
+          />
+          <TextField
+            name='repetirContrasena'
+            id='repetirContrasena'
+            variant='outlined'
+            type='password'
+            value={formik.values.repetirContrasena}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.repetirContrasena && Boolean(formik.errors.repetirContrasena)}
+            helperText={formik.touched.repetirContrasena && formik.errors.repetirContrasena}
+            placeholder='Repetir nueva contraseña'
+          />
+          <Button variant='contained' type='submit' sx={{ m: 'auto', mt: 2 }}>
+            Actualizar mi contraseña
+          </Button>
+        </Box>
       </Box>
-    </Box>
+    </HomeLayout>
   )
 }
 
