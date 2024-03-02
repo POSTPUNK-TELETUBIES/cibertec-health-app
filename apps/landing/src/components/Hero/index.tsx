@@ -64,8 +64,8 @@ export const Hero = ()=>{
           sx={{
             width: 'fit-content'
           }}
-        >
-          Afiliate
+          href={`${process.env.PROJECT_URL}/#/registrate`}
+        >Registrate
         </Button>
         <Box display={'flex'} gap={'3rem'}>
           <Typography variant="h4">

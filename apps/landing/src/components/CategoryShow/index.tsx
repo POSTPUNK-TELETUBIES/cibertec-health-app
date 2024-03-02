@@ -1,6 +1,4 @@
-import { Box, BoxProps, Card, Typography, CardProps} from "@mui/material"
-import useMediaQuery from '@mui/material/useMediaQuery';
-import landingTheme from '@/theme'
+import { Box, Card, Typography, CardProps, Button} from "@mui/material"
 import { ChatDoctorIcon } from "../ChatDoctorIcon"
 import { PillsIcon } from "../PillsIcon"
 import { HospitalIcon } from "../HospitalIcon"
@@ -90,27 +88,27 @@ export const CategoryShow = ()=>{
         </Typography>
       </CardFlexBg>
       <CardFlexBg>  
-        <Box display={'grid'} sx={{placeItems: 'center'}}>
-          <HospitalIcon sx={{
-            fontSize: 98,
-            marginBlock: '2rem',
-            borderRadius: '50%',
-            backgroundColor: 'white',
-
-            height: '20rem',
-            width: '20rem',
-            border: '2px solid #4ED6DA',
-            boxShadow: '4px 5px 12px -9px black',
-          }} />
-        </Box>
-        <Typography fontSize={'1.5rem'} variant='h4'>
-          Clinicas
-        </Typography>
-        <Typography variant='body2'>
-          Obtenga servicios prioritarios en clinicas con Haidoc. Lo que te permite acudir a la clínica de forma más práctica y ahorar tiempo.
-        </Typography>
+          <Box display={'grid'} sx={{placeItems: 'center'}} >
+            <HospitalIcon sx={{
+              fontSize: 98,
+              marginBlock: '2rem',
+              borderRadius: '50%',
+              backgroundColor: 'white',
+              height: '20rem',
+              width: '20rem',
+              border: '2px solid #4ED6DA',
+              boxShadow: '4px 5px 12px -9px black',
+            }} />
+          </Box>
+          <a  href={`${process.env.PROJECT_URL}/#/verSucursales`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Typography fontSize={'2rem'} variant='h4' margin={5}>
+                Clinicas
+            </Typography>
+          </a>
+          <Typography variant='body2'>
+            Obtenga servicios prioritarios en clinicas con Haidoc. Lo que te permite acudir a la clínica de forma más práctica y ahorar tiempo.
+          </Typography>
       </CardFlexBg>
-
     </Box>
   </Box>
 }
