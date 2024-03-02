@@ -80,6 +80,7 @@ export const DoctorsShowCase = ()=>{
         width: '30rem',
         margin: '2.5rem auto',
       }}
+      href={`${process.env.PROJECT_URL}/#/verDoctores`}
        >
         Ver todos los doctores
         </Button>

@@ -71,7 +71,7 @@ export const Footer = () => {
             morbi tristique libero urna sem vitae. Viverra facilisis rhoncus et,
             nibh nullam vitae laoreet.
           </Typography>
-          <Button variant="contained" sx={{ mt: 4, borderRadius: "40px" }}>
+          <Button variant="contained" sx={{ mt: 4, borderRadius: "40px" }}  href={`${process.env.PROJECT_URL}/#/`}>
             Empecemos
           </Button>
         </Card>
