@@ -1,9 +1,7 @@
 import { CategoryShow } from "@/components/CategoryShow";
 import { DoctorsShowCase } from "@/components/DoctorsShowCase";
 import { Hero } from "@/components/Hero";
-import { OurServices } from "@/components/OurServices";
-import { AboutHaidoc } from "@/components/AboutHaidoc";
-
+import { OurServices } from '@/components/OurServices'
 
 export default function Home() {
   return (
@@ -12,7 +10,6 @@ export default function Home() {
       <CategoryShow />
       <OurServices />
       <DoctorsShowCase />
-      <AboutHaidoc />
     </main>
-  );
+  )
 }
