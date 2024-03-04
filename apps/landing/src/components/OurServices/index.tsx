@@ -19,7 +19,7 @@ export const OurServices = ()=>{
       width={600}
       height={1000}
       alt="female doctor smiling"
-      src={"/doctorService.png"}
+      src={"./doctorService.png"}
       />
     <Box display={'flex'} flexDirection={'column'}>
       <Typography variant="h4" sx={{
@@ -58,7 +58,7 @@ export const OurServices = ()=>{
             width={55}
             height={55}
             alt="potion"
-            src={"/covid-test.png"}
+            src={"./covid-test.png"}
 
           />
           <Typography variant="h4">
@@ -84,7 +84,7 @@ export const OurServices = ()=>{
             width={55}
             height={55}
             alt="potion"
-            src={"/supplement.png"}
+            src={"./supplement.png"}
           />
           <Typography variant="h4">
             Medicamentos
@@ -109,7 +109,7 @@ export const OurServices = ()=>{
             width={55}
             height={55}
             alt="potion"
-            src={"/flask.png"}
+            src={"./flask.png"}
           />
           <Typography variant="h4">
             Laboratorio
@@ -134,7 +134,7 @@ export const OurServices = ()=>{
             width={55}
             height={55}
             alt="potion"
-            src={"/schedule.png"}
+            src={"./schedule.png"}
           />
           <Typography variant="h4">
             Calendarios

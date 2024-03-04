@@ -56,17 +56,17 @@ export const AboutHaidoc = ()=>{
                     }
                     }
                 }>
-                    <Link href={'#'} target="_blank">Sobre Haidoc</Link>
+                    <Link href={'#'} >Sobre Haidoc</Link>
                     <div className="white-divider"></div>
-                    <Link href={'#'} target="_blank">Tecnologia</Link>
+                    <Link href={'#'} >Tecnologia</Link>
                     <div className="white-divider"></div>
-                    <Link href={'#'} target="_blank">Servicios</Link>
+                    <Link href={'#'} >Servicios</Link>
                 </Box>
                 <Image
                     width={400}
                     height={600}
                     alt="old lady doctor smiling with glasses"
-                    src={"/about-doctor.png"}
+                    src={"./about-doctor.png"}
                     />
             </Box>
             <Box>
