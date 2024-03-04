@@ -16,6 +16,7 @@ import EventIcon from '@mui/icons-material/Event'
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital'
 import MoreTimeIcon from '@mui/icons-material/MoreTime'
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork'
+import InfoIcon from '@mui/icons-material/Info';
 
 const theme = createTheme()
 const base = process.env.PROJECT_URL!
@@ -91,6 +92,17 @@ const Header = () => {
                     <MapsHomeWorkIcon />
                   </ListItemIcon>
                   Sucursales
+                </MenuItem>
+              </a>
+              <a
+                href={`${base}#/sobre`}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                <MenuItem>
+                  <ListItemIcon>
+                    <InfoIcon />
+                  </ListItemIcon>
+                  Sobre HaiDoc
                 </MenuItem>
               </a>
             </Box>
