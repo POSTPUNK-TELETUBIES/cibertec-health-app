@@ -17,6 +17,7 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital'
 import MoreTimeIcon from '@mui/icons-material/MoreTime'
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork'
 import InfoIcon from '@mui/icons-material/Info';
+import HomeIcon from '@mui/icons-material/Home';
 
 const theme = createTheme()
 const base = process.env.PROJECT_URL!
@@ -51,6 +52,17 @@ const Header = () => {
 
           {!isMobile && (
             <Box display='flex' gap={2}>
+             <a
+                href={`${base}#/sobre`}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                <MenuItem>
+                  <ListItemIcon>
+                    <HomeIcon />
+                  </ListItemIcon>
+                  Inicio
+                </MenuItem>
+              </a>
               <a
                 href={`${base}/#/reservarNuevaCita`}
                 style={{ textDecoration: 'none', color: 'inherit' }}
