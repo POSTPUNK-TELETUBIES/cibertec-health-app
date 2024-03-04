@@ -107,7 +107,7 @@ export const Hero = ()=>{
         <Image
           fill
           alt="doctor"
-          src={"/doctorsHero.webp"}
+          src={"./doctorsHero.webp"}
         />
       </Box>
       </Box>

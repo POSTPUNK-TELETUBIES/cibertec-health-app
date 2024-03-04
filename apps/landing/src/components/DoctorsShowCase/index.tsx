@@ -89,7 +89,7 @@ export const DoctorsShowCase = ()=>{
       width={800}
       height={600}
       alt="doctora con lentes"
-      src={"/doctorCalificado.png"}
+      src={"./doctorCalificado.png"}
       />
   </Box>
 }
