@@ -53,7 +53,7 @@ const Header = () => {
           {!isMobile && (
             <Box display='flex' gap={2}>
              <a
-                href={`${base}#/sobre`}
+                href="https://postpunk-teletubies.github.io/cibertec-health-app/landing/"
                 style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <MenuItem>
