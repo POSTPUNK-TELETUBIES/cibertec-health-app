@@ -40,6 +40,7 @@ jobs:
         env: 
             NEXT_PUBLIC_ANON_KEY: ${{ secrets.NEXT_PUBLIC_ANON_KEY }}
             NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+            PROJECT_URL: ${{ vars.PROJECT_URL }}
         run: |
           pnpm install
           pnpm build
