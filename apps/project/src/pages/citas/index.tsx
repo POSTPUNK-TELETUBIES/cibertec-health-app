@@ -6,9 +6,6 @@ import CardCitaMedica from '../../components/CardCitaMedica'
 import db from '../../db'
 import { CitaMedica } from '../../types/citaMedica'
 import { useEffect, useState } from 'react'
-// import Selectores from './Selectores'
-
-// const citas: CitaMedica[] = (await db.citaMedica.getMany(0, 50)) as CitaMedica[]
 
 const MisCitasMedicas = () => {
   const [citas, setCitas] = useState<CitaMedica[]>([])
@@ -25,8 +22,6 @@ const MisCitasMedicas = () => {
       <Container>
         <Title>Mis citas médicas</Title>
         <Separador />
-
-        {/* <Selectores /> */}
 
         <Grid container spacing={{ xs: 1, sm: 2, md: 3 }} mb={8} pt={6}>
           {citas.map((cita) => (

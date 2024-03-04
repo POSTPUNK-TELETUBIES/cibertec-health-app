@@ -12,6 +12,7 @@ import VerDoctores from '../pages/doctores'
 import MisCitasMedicas from '../pages/citas'
 import ReservarNuevaCita from '../pages/reservarCIta'
 import PerfilDoctor from '../pages/PerfilDoctor'
+import ConfirmarEmail from '../pages/ConfirmarEmail'
 
 const routesPublic = [
   {
@@ -73,6 +74,8 @@ const AppRoutes = () => {
             : routesPublic.map((route) => (
                 <Route path={route.path} element={route.element} key={uuid()} />
               ))}
+
+          <Route path={'/confirmarEmail'} element={<ConfirmarEmail />} key={uuid()} />
         </Routes>
       </HashRouter>
     </SnackbarProvider>

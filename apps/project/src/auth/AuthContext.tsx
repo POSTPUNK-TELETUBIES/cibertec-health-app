@@ -19,10 +19,8 @@ interface IAppContext {
   setUser: Dispatch<SetStateAction<string>>
 }
 
-// AuthContext
 export const AuthContext = createContext<IAppContext>({} as IAppContext)
 
-// AuthProvider
 export const AuthProvider = ({ children }: Props) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
   const [user, setUser] = useState<string>('')

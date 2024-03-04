@@ -21,6 +21,8 @@ export const registrarse = async (paypload: RegisterFormData) => {
     password: contrasena,
     options: {
       data: { ...others },
+      emailRedirectTo:
+        'https://postpunk-teletubies.github.io/cibertec-health-app/dev/project/#confirmarEmail',
     },
   })
 

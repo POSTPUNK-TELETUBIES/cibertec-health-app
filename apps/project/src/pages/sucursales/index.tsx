@@ -24,11 +24,6 @@ const VerSucursales = () => {
       <Container>
         <Title>Sucursales</Title>
         <Separador />
-
-        {/* <Box width={200} m={'auto'} my={4}>
-          <SelectorProvincia />
-        </Box> */}
-
         <Grid container spacing={{ xs: 1, sm: 2, md: 3 }} mb={8} pt={6}>
           {sucursales.map((sucursal, index) => (
             <Grid item xs={12} md={6} key={index}>
