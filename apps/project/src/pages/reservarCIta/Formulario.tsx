@@ -84,26 +84,6 @@ const Formulario = () => {
       m={'auto'}
       pt={4}
     >
-      {/* DOCTOR */}
-      <FormControl fullWidth>
-        <InputLabel id='doctor-label'>Doctor</InputLabel>
-        <Select
-          labelId='doctor-label'
-          label='Doctor'
-          name='doctor'
-          value={formik.values.doctor}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          error={formik.touched.doctor && Boolean(formik.errors.doctor)}
-        >
-          {doctores.map((doctor) => (
-            <MenuItem key={doctor.id} value={doctor.id}>
-              {doctor.nombres + ' ' + doctor.apellidos}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
       {/* ESPECIALIDAD */}
       <FormControl fullWidth>
         <InputLabel id='especialidad-label'>Especialidad</InputLabel>
@@ -119,6 +99,26 @@ const Formulario = () => {
           {especialidades.map((especialidad, index) => (
             <MenuItem key={index} value={especialidad}>
               {especialidad}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+
+      {/* DOCTOR */}
+      <FormControl fullWidth>
+        <InputLabel id='doctor-label'>Doctor</InputLabel>
+        <Select
+          labelId='doctor-label'
+          label='Doctor'
+          name='doctor'
+          value={formik.values.doctor}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          error={formik.touched.doctor && Boolean(formik.errors.doctor)}
+        >
+          {doctores.map((doctor) => (
+            <MenuItem key={doctor.id} value={doctor.id}>
+              {doctor.nombres + ' ' + doctor.apellidos}
             </MenuItem>
           ))}
         </Select>
@@ -176,22 +176,18 @@ const Formulario = () => {
           onBlur={formik.handleBlur}
           error={formik.touched.fecha && Boolean(formik.errors.fecha)}
         >
-          <MenuItem value='2022-12-12'>12/12/2022</MenuItem>
-          <MenuItem value='2022-12-13'>13/12/2022</MenuItem>
-          <MenuItem value='2022-12-14'>14/12/2022</MenuItem>
-          <MenuItem value='2022-12-15'>15/12/2022</MenuItem>
-          <MenuItem value='2022-12-16'>16/12/2022</MenuItem>
-          <MenuItem value='2022-12-17'>17/12/2022</MenuItem>
-          <MenuItem value='2022-12-18'>18/12/2022</MenuItem>
+          <MenuItem value='2024-04-01'>01/04/2024</MenuItem>
+          <MenuItem value='2024-04-02'>02/04/2024</MenuItem>
+          <MenuItem value='2024-04-05'>05/04/2024</MenuItem>
+          <MenuItem value='2024-04-06'>06/04/2024</MenuItem>
+          <MenuItem value='2024-04-09'>09/04/2024</MenuItem>
+          <MenuItem value='2024-04-10'>10/04/2024</MenuItem>
+          <MenuItem value='2024-04-12'>12/04/2024</MenuItem>
+          <MenuItem value='2024-04-14'>14/04/2024</MenuItem>
+          <MenuItem value='2024-04-16'>16/04/2024</MenuItem>
+          <MenuItem value='2024-04-18'>18/04/2024</MenuItem>
         </Select>
       </FormControl>
-
-      {/* <InputLabel htmlFor='telefono'>Fecha de nacimiento</InputLabel>
-      <LocalizationProvider dateAdapter={AdapterLuxon}>
-        <DemoContainer components={['DatePicker']}>
-          <DatePicker onChange={formik.handleChange} />
-        </DemoContainer>
-      </LocalizationProvider> */}
 
       <Button variant='contained' type='submit' sx={{ m: 'auto', mt: 2 }}>
         Reservar mi cita médica
