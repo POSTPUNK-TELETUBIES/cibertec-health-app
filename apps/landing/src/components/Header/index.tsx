@@ -107,7 +107,7 @@ const Header = () => {
                 </MenuItem>
               </a>
               <a
-                href={`${base}#/sobre`}
+                href="https://postpunk-teletubies.github.io/cibertec-health-app/landing/sobre"
                 style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <MenuItem>
